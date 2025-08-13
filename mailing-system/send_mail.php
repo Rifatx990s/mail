@@ -4,10 +4,10 @@ require __DIR__ . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Load POST data
-$to      = $_POST['to'] ?? '';
-$subject = $_POST['subject'] ?? '';
-$body    = $_POST['body'] ?? '';
+// Load GET data
+$to      = $_GET['to'] ?? '';
+$subject = $_GET['subject'] ?? '';
+$body    = $_GET['body'] ?? '';
 
 if (!$to || !$subject || !$body) {
     http_response_code(400);
